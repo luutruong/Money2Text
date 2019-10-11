@@ -2,12 +2,14 @@
   "dependencies": {},
   "scripts": {
     "prettier": "node_modules/.bin/prettier --config ./.prettierrc --write Money2Text.js",
-    "mocha": "node_modules/.bin/mocha"
+    "mocha": "node_modules/.bin/mocha",
+    "minify": "node_modules/.bin/uglifyjs Money2Text.js -c -m -b ascii_only,beautify=false -o dist/Money2Text.min.js"
   },
   "devDependencies": {
     "husky": "^3.0.8",
     "mocha": "^6.2.1",
-    "prettier": "^0.4.0"
+    "prettier": "^0.4.0",
+    "uglify-js": "^3.6.1"
   },
   "husky": {
     "pre-commit": "npm run prettier",
