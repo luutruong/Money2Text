@@ -1,4 +1,4 @@
-(function(root) {
+(function() {
   /**
    * Generate a string from a number to vietnamese language.
    * @param {number} number
@@ -54,9 +54,9 @@
           tenth = baseNumbers[str[0]] + ' mươi';
         } else if (str[0] === '1') {
           tenth = exponents[10];
-          if (str[1] === '0') {
-            unit = '';
-          }
+        }
+        if (str[0] >= 1 && str[1] === '0') {
+          unit = '';
         }
 
         return tenth + ' ' + unit;
@@ -129,7 +129,7 @@
         return Money2Text;
       });
     } else {
-      root.Money2Text = Money2Text;
+      window.Money2Text = Money2Text;
     }
   }
-})(window);
+})();
